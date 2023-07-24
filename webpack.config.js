@@ -1,5 +1,3 @@
-'use strict'
-
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
@@ -7,10 +5,13 @@ const autoprefixer = require('autoprefixer')
 const sass = require('sass');
 
 
+
 module.exports = {
     mode : 'development',
     entry : {
-        bundle : path.resolve(__dirname, 'src/index.js'),
+        main : path.resolve(__dirname, 'src/mappingdata.js'),
+        second : path.resolve(__dirname, 'src/autocomplete.js'),
+        
     },
     output : {
         path : path.resolve(__dirname, 'dist'),
@@ -33,6 +34,7 @@ module.exports = {
     module: {
         rules: [
             {
+                
                 test:/\.(scss)$/,
                 use: [
                     {
@@ -80,6 +82,7 @@ module.exports = {
         title: 'Webpack App',
         filename: 'index.html',
         template: 'src/template.html',
+        inject:'head'
     }), 
    ],
    

@@ -2,122 +2,109 @@
 // Import all of Bootstrap's CSS
 @import "/bootstrap/bootstrap.min.css";
 
-$primary-color: #2fa8cc;
-$secondary-color: #f4f4f4;
-$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-
-
 /*
  * Base structure
  */
+$primary-color: #212529;
+$secondary-color: #f4f4f4;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
-
- body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
-  
+body {
+  text-shadow: 0 0.05rem 0.1rem rgba(255, 248, 248, 0.5);
+  color: $primary-color;
 }
+
 
 .cover-container {
-  max-width: 42em;
+  width: 80em; 
+  align-items: center;
+  padding-bottom: 12em;
+}
+
+.blur-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 3em;
+}
+
+.blur-section{
+  backdrop-filter: blur(5px);
+  border-radius: 10%;
+  padding: 3em 3em 3em 3em;
+}
+
+.h-100 {
+  height: -moz-max-content !important;
+  height: max-content !important;
+}
+
+
+
+#kkk{
+  margin-top: 0em;
+  color: $primary-color;
+}
+#display-image{
+  /* !!! display:"inline" in mappingdata.js -> const Image !!! */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28em;
+  z-index: -13;
+  object-fit:fill;
+
+}
+
+
+#display-default-image{
+  background-image: url(/src/assets/Overview-New-York-City.webp); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  display:inline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 27em;
+  z-index: -13;
   
-}
-
-.h-100{
-  height:max-content!important;
-}
-
-/*
- * Header
- */
-
-.nav-masthead .nav-link {
-  color: rgba(255, 255, 255, .5);
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      /*
- * Globals
- */
-
-
-/* Custom default button */
-.btn-light,
-.btn-light:hover,
-.btn-light:focus {
-  color: rgb(0, 0, 0);
-  text-shadow: none; /* Prevent inheritance from `body` */
-}
-
-#immagine { 
-
-  width: 200px;
 
 }
+
+ul{
+  color: red;
+}
+
+#display-summary {
+  padding: 70px;
+  text-align: center;
+} 
+
+#display-summary > p{
+  font-size: 1.3em;
+}
+
+#okok{
+    padding-top: 10em;
+  }
+
+
+.chart-container-2 {
+  height: 350px!important;
+  max-width: 700px !important;
+}
+
+footer ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+footer ul li a{
+  color: whitesmoke;
+  padding: 20px;
+  font-size: 50px;
+}
+/*# sourceMappingURL=main.css.map */
