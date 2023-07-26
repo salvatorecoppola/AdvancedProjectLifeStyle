@@ -1,5 +1,7 @@
 import axios from "axios"
-import '../styles/main.scss';
+import '../styles/main.scss' 
+import * as bootstrap from 'bootstrap'
+
 
 
 const apiUrl = process.env.API_URL
