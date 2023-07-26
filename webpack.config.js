@@ -9,8 +9,8 @@ const sass = require('sass');
 module.exports = {
     mode : 'development',
     entry : {
-        main : path.resolve(__dirname, 'src/mappingdata.js'),
-        second : path.resolve(__dirname, 'src/autocomplete.js'),
+        main : path.resolve(__dirname, 'src/js/mappingdata.js'),
+        second : path.resolve(__dirname, 'src/js/autocomplete.js'),
         
     },
     output : {

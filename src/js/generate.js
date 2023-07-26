@@ -41,7 +41,9 @@ Functions and their calls and all related functions
 // Funzione per gestire gli errori delle chiamate API
 function errorHandling(err){
   if( !input || err.response.status == 404 ){  
-    errorElement.innerText = "Must write a city in Searchbox"
+    errorElement.innerHTML = `<div class="alert alert-warning" role="alert">
+    "Must write a city in Searchbox"!
+  </div>`
     input.addEventListener("focus", deleteAll)
     function deleteAll(){
       table.innerHTML=""
@@ -49,7 +51,6 @@ function errorHandling(err){
       salaries.innerHTML = ""
       accordion.innerHTML = ""
       finalResult.innerHTML = ""
-      input.value = ""
       errorElement.innerHTML = ""
 
     }

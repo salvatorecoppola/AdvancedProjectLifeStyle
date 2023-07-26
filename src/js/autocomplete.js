@@ -61,6 +61,7 @@ function autocomplete(event){
   const cityMatches = autocompleteMatch(event.target.value)
 
   cityMatches.forEach(city =>  {
+    
 
 /* therefore, in the cityMatches variable returns the filtered element "city",
      from here we start our formatting in HTML,
@@ -73,7 +74,7 @@ function autocomplete(event){
     finalResult.addEventListener("click", selectResult)
 
   })
-  finalResult.innerHTML = `<ol id="ulCityList">${autocompleteResult}</ol>`
+  finalResult.innerHTML = `<ul id="ulCityList">${autocompleteResult}</ul>`
 
 }
 
@@ -85,7 +86,8 @@ function selectResult(event){
 
  
   finalResult.innerHTML = ""
-  input.value =  event.target.textContent.replace(/ /g,'-')
+  input.value =  event.target.textContent.replace(/ /g,'-');
+  
 
 }
 

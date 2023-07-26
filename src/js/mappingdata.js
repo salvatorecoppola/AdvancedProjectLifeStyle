@@ -6,7 +6,7 @@ import Chart from 'chart.js/auto'
 
 
 import {getSummary, getCategories, getImages, getLgbtqInformation, getSalaries, getPollutionInformation, 
-getLivingInformation, getEducationInformation} from "./generate";
+getLivingInformation, getEducationInformation} from "../js/generate";
 
 
 
@@ -268,10 +268,6 @@ accordion.innerHTML=
 </div>
 </div>
 </div>`;
-
-
-
-
 };
 
 //end of diplayInfo function

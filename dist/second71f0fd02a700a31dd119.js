@@ -4059,9 +4059,9 @@ const toJSONObject = (obj) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*****************************!*\
-  !*** ./src/autocomplete.js ***!
-  \*****************************/
+/*!********************************!*\
+  !*** ./src/js/autocomplete.js ***!
+  \********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -4151,7 +4151,7 @@ function autocomplete(event) {
     /*inoltre finalResult al suo click farà partire la funzione selectResult */
     finalResult.addEventListener("click", selectResult);
   });
-  finalResult.innerHTML = "<ol id=\"ulCityList\">".concat(autocompleteResult, "</ol>");
+  finalResult.innerHTML = "<ul id=\"ulCityList\">".concat(autocompleteResult, "</ul>");
 }
 
 /*selectResult will make sure that when we click on the
@@ -4165,4 +4165,4 @@ function selectResult(event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=secondee88f54b9dc36611c9b3.js.map
+//# sourceMappingURL=second71f0fd02a700a31dd119.js.map

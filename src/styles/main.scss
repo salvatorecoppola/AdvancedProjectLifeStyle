@@ -16,7 +16,7 @@ body {
 
 
 .cover-container {
-  width: 80em; 
+  width: 90em; 
   align-items: center;
   padding-bottom: 12em;
 }
@@ -26,7 +26,10 @@ body {
   overflow: hidden;
   padding-top: 3em;
 }
-
+.alert{
+  margin-left: 25em;
+  width: 30em;
+}
 .blur-section{
   backdrop-filter: blur(5px);
   border-radius: 10%;
@@ -38,10 +41,7 @@ body {
   height: max-content !important;
 }
 
-
-
 #kkk{
-  margin-top: 0em;
   color: $primary-color;
 }
 #display-image{
@@ -87,10 +87,47 @@ ul{
   font-size: 1.3em;
 }
 
-#okok{
-    padding-top: 10em;
+#errore{
+    padding-right: 400px;
   }
 
+#ulCityList {
+  border:1px solid #0D6EFD;
+  border-top: none;
+  color: #f4f4f4;
+  display:inline-block;
+  position: absolute;
+  top:150px;
+  left: 50px; 
+  font-size:larger;
+  width:245px;
+  height:126px;
+  overflow:hidden;
+  padding: 10px 0 0 0; 
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+#ulCityList li {
+  list-style: none;
+  text-align:start;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#ulCityList :hover {
+ background-color: #0D6EFD;
+ color: #f4f4f4;
+ transition: all 0.3s ease;
+  }
+  
+#autoCompleteResult {
+  color: #212529;
+  width:240px;
+  height:120px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; 
+}
 
 .chart-container-2 {
   height: 350px!important;
