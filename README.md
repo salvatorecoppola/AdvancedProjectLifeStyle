@@ -3,7 +3,7 @@
 I created an app that allows you to obtain information about the quality of life of cities
 through the use of the external Teleport service.
 
-https://main--quiet-stroopwafel-ef04a2.netlify.app/
+https://qualityoflifesearcher.netlify.app/
 
 
 ## Table of contents
