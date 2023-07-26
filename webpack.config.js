@@ -80,7 +80,8 @@ module.exports = {
     plugins: [ 
         new Dotenv(),
         new HtmlWebpackPlugin({
-        title: 'Webpack App',
+        title: 'Teleport Api Project',
+        favicon: 'src/assets/favicon.ico',
         filename: 'index.html',
         template: 'src/template.html',
         inject:'head'
