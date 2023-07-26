@@ -5,6 +5,7 @@ be appended to the bottom of this file*/
 import Chart from 'chart.js/auto'
 
 
+
 import {getSummary, getCategories, getImages, getLgbtqInformation, getSalaries, getPollutionInformation, 
 getLivingInformation, getEducationInformation} from "../js/generate";
 

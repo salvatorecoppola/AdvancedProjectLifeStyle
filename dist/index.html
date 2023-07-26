@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class='h-100'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href= "styles/main.css" >
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>  
+<script defer src="mainc649d7ee6109d70564c9.js"></script><script defer src="second7c325298b8632d4a15fc.js"></script></head>
+
+
+<body class="bg-light">
+  <!-- Navbar -->
+  <nav class="navbar bg-primary">
+    <div class="container-fluid">
+      <span class="navbar-brand m-2 h1 px-3 mx-5">My Api Project</span>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Cover container section -->
+  <div class="cover-container align-self-center d-flex w-100 h-100 mb-0 flex-column">
+    <!-- Image section -->
+    <img id="display-default-image" class="img-fluid" />
+    <img id="display-image" src="" class="img-fluid" alt="Caricamento..." loading="lazy" />
+    <!-- Image section end -->
+
+    <div class="blur-container">
+      <!-- Blur effect section -->
+      <main class="blur-section container-md text-center text-white pt-5">
+        <h1>Enter your city.</h1>
+        <!-- End Blur effect section -->
+
+        <!-- SearchBar section -->
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control input-lg" id="searchBar" placeholder="Type los angeles" required autocomplete="off">
+          <button class="btn btn-outline-primary" type="button" id="searchBtn">Button</button>
+        </div>
+        <!-- AutoComplete suggestion -->
+        <div id="autoCompleteResult"></div>
+        <!-- End AutoComplete suggestion and SearchBar section -->
+      </div>
+      <!-- End cover blur-container -->
+      <div id="ErrorBoxContainer" class="container-sm d-flex justify-content-center align-self-center text-center"></div>
+        <!-- End cover container section -->
+    </div>
+
+</main>
+
+
+<!-- Descriptions section -->
+<section class="features my-1 py-1 text-center">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="features-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features d-flex"></div>
+          <h3>Sommario e Grafico</h3>
+          <p class="lead mb-0">Troverai una breve descrizione della città! Il grafico a barre indica il punteggio da 0 a 10 della Life Quality di alcune categorie!</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="features-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features d-flex"></div>
+          <h3>Tabella</h3>
+          <p class="lead mb-0">Nella tabella sono indicati gli stipendi! </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="features-item mx-auto mb-0 mb-lg-3">
+          <div class="features d-flex"></div>
+          <h3>Fisarmonica</h3>
+          <p class="lead mb-0">Nella fisarmonica, in fondo alla pagina, sono raccolti alcuni dati come l'istruzione, la tolleranza, l'inquinamento e alcuni dati sull'economia!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End descriptions section -->
+
+<!-- Here were shown the data getted by the Api call -->
+<div class="container-fluid pt-5 mt-5 column-gap-3">
+  <div class="row row-cols-1 row-cols-md-2 ">
+    <div class="col offset-md-1 text-left" data-aos="fade-down" data-aos-duration="1500">
+      <p class="text-justify" id="display-summary"></p>
+    </div>
+    <div class="col offset-md-5">
+      <div class="chart-container-2"> <canvas id="myChart" style="display: flexbox;" width="800" height="400"></canvas> </div>
+    </div>
+    <div class="col offset-md-1">
+      <div id="display-salaries"></div>
+      <div id="display"></div>
+    </div>
+    <div class="col offset-md-5 my-5"> <div id="accortion"></div></div>
+  </div>
+</div>
+<!-- End Api display data -->
+
+<!-- Footer section -->
+<footer class="container-fluid flex-column text-dark-50 bg-primary pt-2">
+  <div class="row row-cols-1 row-cols-md-2">
+    <div id="good" class="col d-flex justify-content-center text-center text-white px-3 pt-3">
+      <p>This website was built with the use of Axios, Bootstrap, Chart.js, AOS, and Webpack. Salvatore Coppola. 2023.</p>
+    </div>
+    <div class="col d-flex justify-content-center pt-3">
+      <ul class="social mr-5">
+        <li><a href="https://www.instagram.com/scwdeveloper/" rel="noopener" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/salvatore-coppola-9639b9235/" rel="noopener" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://github.com/salvatorecoppola" rel="noopener" target="_blank"><ion-icon name="logo-github"></ion-icon> </a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- End footer section -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  AOS.refresh();
+</script>
+</body>
+</html>

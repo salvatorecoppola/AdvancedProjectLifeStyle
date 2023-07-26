@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-// Import all of Bootstrap's CSS
 @import "/bootstrap/bootstrap.min.css";
 
-/*
- * Base structure
- */
+
 $primary-color: #212529;
 $secondary-color: #f4f4f4;
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
