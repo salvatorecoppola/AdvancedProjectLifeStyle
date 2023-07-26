@@ -1,5 +1,5 @@
 import axios from "axios"
-import '../styles/main.scss'
+import '../styles/main.scss';
 
 
 const apiUrl = process.env.API_URL

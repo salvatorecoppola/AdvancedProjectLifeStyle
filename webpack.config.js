@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
 const autoprefixer = require('autoprefixer')
 const sass = require('sass');
+const TerserPlugin = require('terser-webpack-plugin');
 
 
 
@@ -78,5 +79,9 @@ module.exports = {
         inject:'head'
     }), 
    ],
+   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()]
+  }
    
 }
