@@ -5,7 +5,6 @@ be appended to the bottom of this file*/
 import Chart from 'chart.js/auto'
 
 
-
 import {getSummary, getCategories, getImages, getLgbtqInformation, getSalaries, getPollutionInformation, 
 getLivingInformation, getEducationInformation} from "../js/generate";
 
@@ -223,7 +222,7 @@ const fixedFloatValue = float_value?.toFixed(2)
 const div = document.createElement("div");
 accordion.innerHTML = ""
 accordion.append(div);
-accordion.innerHTM = 
+accordion.innerHTML = 
 `<div class="accordion accordion-flush" data-aos="fade-left" id="accordionFlushExample">
 <div class="accordion-item">
   <h2 class="accordion-header">
