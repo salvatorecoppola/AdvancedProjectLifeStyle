@@ -1,7 +1,9 @@
 # JavascriptAdvancedLifestyle
 
-This is my second project using Javascript, managed with Webpack
+I created an app that allows you to obtain information about the quality of life of cities
+through the use of the external Teleport service.
 
+https://main--quiet-stroopwafel-ef04a2.netlify.app/
 
 
 ## Table of contents
@@ -16,16 +18,21 @@ This is my second project using Javascript, managed with Webpack
 
 
 ## General info
-I created an app that allows you to obtain information about the quality of life of cities through the use of the external Teleport service.
+This is my second project using Javascript, managed with Webpack.
 
 
 
 ## Description
-In this web app I have inserted an autocomplete function in the search bar. I passed the data obtained from Axios.js into Chart.js, creating a bar graph which served me to indicate the statistics of the city you were looking for, while other data has been managed with the .map function and sent to the screen in the form of a paragraph or table.
+In this web app I have inserted an autocomplete function in the search bar.  
+I passed the data obtained from Axios.js into Chart.js, creating a bar graph
+which served me to indicate the statistics of the city you were looking for,
+while other data has been managed with the .map function 
+and sent to the screen in the form of a paragraph or table.
 
 
 ## Technologies
 Project is created with:
+
 * HTML5
 * CSS3
 * JAVASCRIPT ES6
