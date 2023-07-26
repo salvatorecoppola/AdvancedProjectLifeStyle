@@ -37,10 +37,6 @@ body {
   height: max-content !important;
 }
 
-#kkk {
-  color: #212529;
-}
-
 #display-image {
   /* !!! display:"inline" in mappingdata.js -> const Image !!! */
   display: none;
@@ -68,10 +64,6 @@ body {
   z-index: -13;
 }
 
-ul {
-  color: red;
-}
-
 #display-summary {
   padding: 70px;
   text-align: center;
@@ -81,7 +73,7 @@ ul {
   font-size: 1.3em;
 }
 
-#errore {
+#ErrorBoxContainer {
   padding-right: 400px;
 }
 
@@ -138,6 +130,4 @@ footer ul li a {
   color: whitesmoke;
   padding: 20px;
   font-size: 50px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

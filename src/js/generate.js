@@ -11,20 +11,21 @@ const salaries = document.getElementById("display-salaries");
 const accordion = document.getElementById("accortion");
 const table = document.getElementById("display");
 const finalResult = document.getElementById("autoCompleteResult");
+const errorElement = document.getElementById('ErrorBoxContainer');
 
-/* by declaring "cityInput" I get
+/* by declaring "Input" I get
 the value of the searchbox and to attach it to the link of
-Teleport in order to be able to receive the data of the entered cities */
+Teleport in order to be able to receive the data of the entered cities 
 
-// const input = document.getElementById("searchBar");
-const errorElement = document.getElementById('errore');
 
 /* extract data from the API for each argument by making a return.
-By exporting the functions I can then use them in index.js
+By exporting the functions I can then use them in mappingdata.js
 using object deconstruction using .map
+
 
 Functions and their calls and all related functions
 (even HTML formatting) will always follow this order
+
 
 1)Summary
 2)Categories
@@ -38,7 +39,7 @@ Functions and their calls and all related functions
 */
 
 
-// Funzione per gestire gli errori delle chiamate API
+// Function to handle API call errors
 function errorHandling(err){
   if( !input || err.response.status == 404 ){  
     errorElement.innerHTML = `<div class="alert alert-warning" role="alert">
@@ -78,7 +79,7 @@ async function getCategories() {
     return categoriesData 
    
       
-  } catch (err) {(err)}
+  } catch (err) {errorHandling(err)}
 };
 getCategories;
 
@@ -160,13 +161,3 @@ getEducationInformation
 export { getSummary, getCategories, getImages, getLgbtqInformation, getSalaries, getPollutionInformation, 
   getLivingInformation, getEducationInformation }
         
-
-   
-  
-    // // Verifica se l'input è valido per la tua chiamata API
-    // const validCities = arrayCity; // Elenca le città valide qui.
-  
-    // if (!validCities.includes(input)) {
-    //   errorElement.innerText = "Città non valida.";
-    //   return;
-    // }

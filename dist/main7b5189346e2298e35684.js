@@ -33,20 +33,21 @@ var salaries = document.getElementById("display-salaries");
 var accordion = document.getElementById("accortion");
 var table = document.getElementById("display");
 var finalResult = document.getElementById("autoCompleteResult");
+var errorElement = document.getElementById('ErrorBoxContainer');
 
-/* by declaring "cityInput" I get
+/* by declaring "Input" I get
 the value of the searchbox and to attach it to the link of
-Teleport in order to be able to receive the data of the entered cities */
+Teleport in order to be able to receive the data of the entered cities 
 
-// const input = document.getElementById("searchBar");
-var errorElement = document.getElementById('errore');
 
 /* extract data from the API for each argument by making a return.
-By exporting the functions I can then use them in index.js
+By exporting the functions I can then use them in mappingdata.js
 using object deconstruction using .map
+
 
 Functions and their calls and all related functions
 (even HTML formatting) will always follow this order
+
 
 1)Summary
 2)Categories
@@ -59,7 +60,7 @@ Functions and their calls and all related functions
 
 */
 
-// Funzione per gestire gli errori delle chiamate API
+// Function to handle API call errors
 function errorHandling(err) {
   if (!input || err.response.status == 404) {
     var deleteAll = function deleteAll() {
@@ -124,7 +125,7 @@ function _getCategories() {
         case 8:
           _context2.prev = 8;
           _context2.t0 = _context2["catch"](0);
-          _context2.t0;
+          errorHandling(_context2.t0);
         case 11:
         case "end":
           return _context2.stop();
@@ -316,14 +317,6 @@ function _getEducationInformation() {
 ;
 getEducationInformation;
 
-
-// // Verifica se l'input è valido per la tua chiamata API
-// const validCities = arrayCity; // Elenca le città valide qui.
-
-// if (!validCities.includes(input)) {
-//   errorElement.innerText = "Città non valida.";
-//   return;
-// }
 
 /***/ }),
 
@@ -19575,8 +19568,8 @@ var displayInfo = /*#__PURE__*/function () {
               string_value = object.string_value,
               float_value = object.float_value,
               percent_value = object.percent_value;
-            //mathround rounds the number
-            //with this operation I translate simple values ​​into percentages
+            // Mathround rounds the number
+            // With this operation I translate simple values ​​into percentages
             var percentValueNum = float_value;
             var finalPercentValue = Number(percentValueNum / 100).toLocaleString(undefined, {
               style: 'percent',
@@ -19591,8 +19584,8 @@ var displayInfo = /*#__PURE__*/function () {
           displayDataSalaries = dataSalaries.map(function (object) {
             var job = object.job,
               salary_percentiles = object.salary_percentiles;
-            //with this operation we transform the integer
-            //to a decimal number by converting it into salary
+            // With this operation we transform the integer
+            // To a decimal number by converting it into salary
             var salariesPercentile = salary_percentiles.percentile_50;
             var salariesNum = new Intl.NumberFormat('en-IN', {
               style: 'currency',
@@ -19601,7 +19594,7 @@ var displayInfo = /*#__PURE__*/function () {
             }).format(salariesPercentile);
             return "\n      <td> ".concat(job.title, "</td>\n      <td> ").concat(salariesNum, "</td>\n    </tr>");
           }).join('');
-          /* here we append the results in HTML */
+          /* Here we append the results in HTML */
           tableDiv = document.createElement("div");
           table.innerHTML = "";
           table.append(tableDiv);
@@ -19614,7 +19607,7 @@ var displayInfo = /*#__PURE__*/function () {
             var label = object.label,
               float_value = object.float_value,
               int_value = object.int_value;
-            //with toFixed I shorten the value to two(2) numbers
+            // With toFixed I shorten the value to two(2) numbers
             return "<div id=\"displayDataPollution\">\n   <div class=\"row\">\n     <div class=\"col\">\n     ".concat(label, "\n     </div>\n     <div class=\"col\">\n     ").concat(int_value || (float_value === null || float_value === void 0 ? void 0 : float_value.toFixed(2)), "\n     </div>\n   </div>\n  </div>");
           }).join('');
           _context3.next = 28;
@@ -19655,11 +19648,11 @@ var displayInfo = /*#__PURE__*/function () {
             var fixedFloatValue = float_value === null || float_value === void 0 ? void 0 : float_value.toFixed(2);
             return "<div id=\"displayDataEducation\">\n   <div class=\"row\">\n     <div class=\"col\">\n     ".concat(label, "\n     </div>\n     <div class=\"col\">\n     ").concat(fixedFloatValue || int_value || string_value || finalPercentValue, "\n     </div>\n   </div>\n  </div>");
           }).join('');
-          /* here we append the results in HTML */
+          /* Here we append the results in HTML */
           div = document.createElement("div");
           accordion.innerHTML = "";
           accordion.append(div);
-          accordion.innerHTML = "<div class=\"accordion accordion-flush\" data-aos=\"fade-left\" id=\"accordionFlushExample\">\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseOne\" aria-expanded=\"false\" aria-controls=\"flush-collapseOne\">\n      Data #1\n    </button>\n  </h2>\n  <div id=\"flush-collapseOne\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">  ".concat(displayDataLgbtq, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseTwo\" aria-expanded=\"false\" aria-controls=\"flush-collapseTwo\">\n    Data #2\n    </button>\n  </h2>\n  <div id=\"flush-collapseTwo\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\"> ").concat(displayDataPollution, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseThree\" aria-expanded=\"false\" aria-controls=\"flush-collapseThree\">\n    Data #3\n    </button>\n  </h2>\n  <div id=\"flush-collapseThree\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">").concat(displayDataLiving, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseFour\" aria-expanded=\"false\" aria-controls=\"flush-collapseFour\">\n    Data #4\n    </button>\n  </h2>\n  <div id=\"flush-collapseFour\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">").concat(displayDataEducation, "\n  </div>\n</div>\n</div>\n</div>\n</div>");
+          accordion.innerHTM = "<div class=\"accordion accordion-flush\" data-aos=\"fade-left\" id=\"accordionFlushExample\">\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseOne\" aria-expanded=\"false\" aria-controls=\"flush-collapseOne\">\n      Data #1\n    </button>\n  </h2>\n  <div id=\"flush-collapseOne\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">  ".concat(displayDataLgbtq, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseTwo\" aria-expanded=\"false\" aria-controls=\"flush-collapseTwo\">\n    Data #2\n    </button>\n  </h2>\n  <div id=\"flush-collapseTwo\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\"> ").concat(displayDataPollution, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseThree\" aria-expanded=\"false\" aria-controls=\"flush-collapseThree\">\n    Data #3\n    </button>\n  </h2>\n  <div id=\"flush-collapseThree\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">").concat(displayDataLiving, "\n  </div>\n</div>\n<div class=\"accordion-item\">\n  <h2 class=\"accordion-header\">\n    <button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapseFour\" aria-expanded=\"false\" aria-controls=\"flush-collapseFour\">\n    Data #4\n    </button>\n  </h2>\n  <div id=\"flush-collapseFour\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlushExample\">\n    <div class=\"accordion-body\">").concat(displayDataEducation, "\n  </div>\n</div>\n</div>\n</div>\n</div>");
         case 38:
         case "end":
           return _context3.stop();
@@ -19669,13 +19662,9 @@ var displayInfo = /*#__PURE__*/function () {
   return function displayInfo() {
     return _ref.apply(this, arguments);
   };
-}();
+}(); // End of diplayInfo function
 
-//end of diplayInfo function
-
-//Funzione per gestire il click sul pulsante di ricerca
-
-/*below I connect the searchBar button
+/* Below I connect the searchBar button
  to which I connected the click event and the function
  displayInfo which will show all recalled data*/
 var searchBtn = document.getElementById("searchBtn");
@@ -19684,4 +19673,4 @@ searchBtn.addEventListener("click", displayInfo);
 
 /******/ })()
 ;
-//# sourceMappingURL=main10e626c31ee573866d1f.js.map
+//# sourceMappingURL=main7b5189346e2298e35684.js.map

@@ -4071,8 +4071,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var apiUrbanAreas = "https://api.teleport.org/api/urban_areas/";
 
-//select the search bar and add the keyup event
-//and the autoComplete function will be used for the autocompletion of the cities
+// Select the search bar and add the keyup event
+// And the autoComplete function will be used for the autocompletion of the cities
 var input = document.getElementById("searchBar");
 input.addEventListener("keyup", autocomplete);
 
@@ -4082,11 +4082,11 @@ via the getUrbanAreas function */
 var arrayCity = [];
 
 /* getUrbanAreas returns me an object where I'm going to extrapolate
-an array of objects()
-From this array I apply a map() and get the property 'name'
-This way I transform 'arrayCity' into an array containing
-the complete list of cities in Teleport
-arrayCity will serve me in autocomplete and autoCompleteMatch' */
+  an array of objects()
+  From this array I apply a map() and get the property 'name'
+  This way I transform 'arrayCity' into an array containing
+  the complete list of cities in Teleport
+  arrayCity will serve me in autocomplete and autoCompleteMatch' */
 var getUrbanAreas = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var response;
@@ -4121,10 +4121,10 @@ var getUrbanAreas = /*#__PURE__*/function () {
 getUrbanAreas();
 var finalResult = document.getElementById("autoCompleteResult");
 
-/* in this function I take the value from autocomplete
-through a RegExp I declare that: if the value of the searchBar
-is empty, returns empty array, on the contrary the inserted word will have to
-have the match with the city previously taken from arrayCity */
+/* In this function I take the value from autocomplete
+  through a RegExp I declare that: if the value of the searchBar
+  is empty, returns empty array, on the contrary the inserted word will have to
+  have the match with the city previously taken from arrayCity */
 function autocompleteMatch(value) {
   if (value == "") return [];
   var reg = new RegExp("^".concat(value), 'gi');
@@ -4134,18 +4134,18 @@ function autocompleteMatch(value) {
 }
 
 /* in autoComplete returns the "event" value from the "keyup" event
-from the input variable, these in turn via event.target.value
-are passed as "value" to autocompleteMatch
-From autocompleteMatch returns the filtered element "city" (the name of the city) */
+  from the input variable, these in turn via event.target.value
+  are passed as "value" to autocompleteMatch
+  From autocompleteMatch returns the filtered element "city" (the name of the city) */
 function autocomplete(event) {
   var autocompleteResult = "";
   var cityMatches = autocompleteMatch(event.target.value);
   cityMatches.forEach(function (city) {
     /* therefore, in the cityMatches variable returns the filtered element "city",
-         from here we start our formatting in HTML,
-         we initialize the autocomplteResult variable,
-         will be hung in the DOM in the finalResult div in which via backtick
-         we will pass the "city" element as the final result */
+       from here we start our formatting in HTML,
+       we initialize the autocomplteResult variable,
+       will be hung in the DOM in the finalResult div in which via backtick
+       we will pass the "city" element as the final result */
     autocompleteResult += "<li>".concat(city = city.toLowerCase(), "</li>");
 
     /*inoltre finalResult al suo click farà partire la funzione selectResult */
@@ -4154,9 +4154,9 @@ function autocomplete(event) {
   finalResult.innerHTML = "<ul id=\"ulCityList\">".concat(autocompleteResult, "</ul>");
 }
 
-/*selectResult will make sure that when we click on the
-recommended city this will hang in our input and
-ready to be searched and empty the finalResult div */
+/* SelectResult will make sure that when we click on the
+  recommended city this will hang in our input and
+  ready to be searched and empty the finalResult div */
 function selectResult(event) {
   finalResult.innerHTML = "";
   input.value = event.target.textContent.replace(/ /g, '-');
@@ -4165,4 +4165,4 @@ function selectResult(event) {
 
 /******/ })()
 ;
-//# sourceMappingURL=second71f0fd02a700a31dd119.js.map
+//# sourceMappingURL=second7c325298b8632d4a15fc.js.map

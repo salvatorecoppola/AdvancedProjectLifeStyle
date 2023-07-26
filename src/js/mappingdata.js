@@ -101,8 +101,8 @@ pictures.style.display = 'inline'; //Show the previously hidden image element in
 const LgbtqInformation = await getLgbtqInformation();
 let displayDataLgbtq = LgbtqInformation?.map((object) => {
 const { label, string_value, float_value, percent_value} = object;
-//mathround rounds the number
-//with this operation I translate simple values ​​into percentages
+// Mathround rounds the number
+// With this operation I translate simple values ​​into percentages
 const percentValueNum = float_value;
 const finalPercentValue = Number(percentValueNum/100).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
 
@@ -121,8 +121,8 @@ const finalPercentValue = Number(percentValueNum/100).toLocaleString(undefined,{
 const dataSalaries = await getSalaries(); 
 let displayDataSalaries = dataSalaries.map((object) => {      
   const { job, salary_percentiles } = object;
-//with this operation we transform the integer
-//to a decimal number by converting it into salary
+// With this operation we transform the integer
+// To a decimal number by converting it into salary
   const salariesPercentile = salary_percentiles.percentile_50
   const salariesNum = new Intl.NumberFormat('en-IN', { style: 'currency',currency: 'USD', currencyDisplay: 'narrowSymbol' }).format(salariesPercentile);
 return `
@@ -132,7 +132,7 @@ return `
 
 }).join('');
 
-  /* here we append the results in HTML */
+  /* Here we append the results in HTML */
 const tableDiv = document.createElement("div");
 table.innerHTML = ""
 table.append(tableDiv);
@@ -157,7 +157,7 @@ const pollutionInformation = await getPollutionInformation();
 let displayDataPollution = pollutionInformation?.map((object) => {
   
   const { label, float_value, int_value} = object;
-//with toFixed I shorten the value to two(2) numbers
+ // With toFixed I shorten the value to two(2) numbers
    return `<div id="displayDataPollution">
    <div class="row">
      <div class="col">
@@ -218,12 +218,11 @@ const fixedFloatValue = float_value?.toFixed(2)
   
   }).join('');
 
-  /* here we append the results in HTML */
+  /* Here we append the results in HTML */
 const div = document.createElement("div");
 accordion.innerHTML = ""
 accordion.append(div);
-accordion.innerHTML=
-
+accordion.innerHTM = 
 `<div class="accordion accordion-flush" data-aos="fade-left" id="accordionFlushExample">
 <div class="accordion-item">
   <h2 class="accordion-header">
@@ -268,14 +267,10 @@ accordion.innerHTML=
 </div>
 </div>
 </div>`;
-};
-
-//end of diplayInfo function
-
-//Funzione per gestire il click sul pulsante di ricerca
+};// End of diplayInfo function
 
 
- /*below I connect the searchBar button
+ /* Below I connect the searchBar button
   to which I connected the click event and the function
   displayInfo which will show all recalled data*/
   let searchBtn = document.getElementById("searchBtn")
